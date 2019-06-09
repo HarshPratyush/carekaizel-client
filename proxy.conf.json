@@ -1,0 +1,6 @@
+{
+  "/carekaizel-bkend/*": {
+    "target": "http://care.kaizelengineers.com/",
+    "secure": false
+  }
+}
