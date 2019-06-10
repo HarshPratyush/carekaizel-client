@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { colorSets } from '@swimlane/ngx-charts/release/utils';
 
 @Component({
   selector: 'kaizel-user-management-page',
@@ -7,7 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementPageComponent implements OnInit {
 
-  constructor() { }
+  userList:Array<{status:string,userList:any[]}>=[{status:'Active',userList:[]},{status:'De-Activated',userList:[]},
+  {status:'New Registration',userList:[]}];
+  chartData:any[]=[
+    {
+      "name": "Active",
+      "value": 40632
+    },
+    {
+      "name": "De-Activated",
+      "value": 49737
+    },
+    {
+      "name": "New Registration",
+      "value": 36745
+    }
+  ];
+  colorSets: any;
+  view:number[]=[300,500]
+  colorScheme;
+  constructor() {
+    Object.assign(this, {
+      colorSets
+    });
+    console.log(colorSets)
+    this.colorScheme=this.colorSets.filter(d=> d.name=='cool')
+   }
 
   ngOnInit() {
   }
