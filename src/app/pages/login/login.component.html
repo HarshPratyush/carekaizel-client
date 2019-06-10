@@ -1,37 +1,130 @@
 
-<!-- <div style="padding-bottom: 34%"> -->
-  <div class="container">
-    <div class="login-form-container">
-      <header class="col-lg-12 login-header" style="text-align:center;"><strong>User Login</strong></header>
-      <div class="container-body">
-        <form (submit)="login()" [noValidate]="false">
-            <div class="row">
-                <div class="col login-pwd">
-                    <label for="usr">Username:</label>
-                    <mat-form-field>
-                        <input autocomplete="off" matInput [(ngModel)]="credentials.username" name='username' required>
-                    </mat-form-field>
+  <div class="container-fluid">
+    <div class="col-md-12 row">
+      <div class="col-md-8" >
+          <section>
+
+                <header class="text-center">
+                  <h1 class="">Kaizel Features</h1>
+                  <h1 class="letter-spacing"><span><b>WE TRULY CARE ABOUT OUR CUSTOMERS</b></span></h1>
+                </header>
+
+                <div class="row col-md-12">
+                  <div class="col-lg-4 col-md-4 order-md-2 text-center img-container">
+                    <img class="img-fluid" src="assets/images/iphone-min.png" alt="">
+                    <img id="my-img" class="interior-img" src="assets/images/ss-center-opening.jpg">
+                  </div> 
+                  <div class="col-lg-4 col-md-4 col-sm-6 order-md-1">
+
+                    <div id="ms-collapsible" class="box-icon box-icon-right" >
+                      <a class="box-icon-title">
+                        <i class="fa fa-eye"></i>
+                        <h2>M.S-Collapsible</h2>
+                      </a>
+                      <p>Since our establishment in this industry, we are readily indulged in manufacturing and supplying a top class quality range of MS Collapsible Door.</p>
+                    </div>
+
+                    <div id="ms-imperforate" class="box-icon box-icon-right">
+                      <a class="box-icon-title">
+                        <i class="fa fa-check"></i>
+                        <h2>M.S-Imperforate</h2>
+                      </a>
+                      <p>Aimed at prospering growth in our domain, we develop and supply an exceptional and comprehensive collection of MS Imperforated Folding Shutter. </p>
+                    </div>
+
+                    <div id="ms-swing" class="box-icon box-icon-right" >
+                      <a class="box-icon-title">
+                        <i class="fa fa-rocket"></i>
+                        <h2>M.S-Swing</h2>
+                      </a>
+                      <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus
+                        posuere velit aliquet.</p>
+                    </div>
+
+                    <div id="ms-telescopic" class="box-icon box-icon-right" >
+                      <a class="box-icon-title">
+                        <i class="fa fa-flash"></i>
+                        <h2>M.S-Telescopic</h2>
+                      </a>
+                      <p>Highly acclaimed company in the domain of manufacturing and supplying of M.S.Manual Telescopic in the market.
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-4 col-sm-6 order-md-3">
+
+                    <div id="ms-center-opening" class="box-icon box-icon-left">
+                      <a class="box-icon-title">
+                        <i class="fa fa-tablet"></i>
+                        <h2>MS-Center Opening</h2>
+                      </a>
+                      <p>As an affluent manufacturer and supplier in this domain, we are instrumental in offering a high quality range of MS Center Opening Door. </p>
+                    </div>
+
+                    <div id="ms-telescopic-auto" class="box-icon box-icon-left" >
+                      <a class="box-icon-title">
+                        <i class="fa fa-random"></i>
+                        <h2>M.S-Telescopic Auto Door</h2>
+                      </a>
+                      <p>Highly acclaimed company in the domain of manufacturing and supplying of M.S.Manual Telescopic in the market.</p>
+                    </div>
+
+                    <div id="ss-center-opening" class="box-icon box-icon-left">
+                      <a class="box-icon-title">
+                        <i class="fa fa-tint"></i>
+                        <h2>S.S-Center Opening</h2>
+                      </a>
+                      <p>KAIZEL Elevators is supplier of SS Center Opening Glass Doors in India. We have expertise in quality all kinds of Elevators.</p>
+                    </div>
+
+                    <div id="ss-telescopic-auto" class="box-icon box-icon-left" >
+                      <a class="box-icon-title">
+                        <i class="fa fa-cogs"></i>
+                        <h2>S.S-Telescopic Auto Door</h2>
+                      </a>
+                      <p>With the help of our professionals, we have been able to offer our clients qualitative range of SS Telescopic Auto Door.</p>
+                    </div>
+
+                  </div>
+
                 </div>
-            </div>
-            <div class="row">
-                <div class="col login-pwd">
-                    <label for="pwd">Password:</label>
-                    <mat-form-field>
-                        <input matInput type="password" name="password" [(ngModel)]="credentials.password"required>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="form-group row">
-              <div class="col">
-                <button mat-button class="btn btn-default login-submit" type="submit">Submit</button>
+
+            </section>
+      </div>
+    <div class=" col-md-4 login-form-div" *ngIf="!app.checkLoggedIn()">
+        <div class="login-form-container align-items-centre">
+            <header class="col-lg-12 login-header" style="text-align:center;"><strong>Admin Login</strong></header>
+            <div class="container-body">
+              <form (submit)="login()" [noValidate]="false">
+                  <div class="row">
+                      <div class="col login-pwd">
+                          <label for="usr">Username:</label>
+                          <mat-form-field>
+                              <input autocomplete="off" matInput [(ngModel)]="credentials.username" name='username' required>
+                          </mat-form-field>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col login-pwd">
+                          <label for="pwd">Password:</label>
+                          <mat-form-field>
+                              <input matInput type="password" name="password" [(ngModel)]="credentials.password"required>
+                          </mat-form-field>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col">
+                      <button mat-button  mat-flat-button class=" login-submit" type="submit">Submit</button>
+                    </div>
+                  </div>
+              </form>
+              <div class="row error-message" *ngIf="app.validationMsg">
+                  <div class="col">
+                      <b>{{app.validationMsg}}</b>
+                  </div>
               </div>
             </div>
-        </form>
-        <div class="row error-message" *ngIf="app.validationMsg">
-            <div class="col">
-                <b>{{app.validationMsg}}</b>
-            </div>
-        </div>
-      </div>
+          </div>
     </div>
+  </div>
 </div>

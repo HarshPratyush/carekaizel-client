@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'kaizel-header',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router,public appService:AppService) { }
 
   ngOnInit() {
   }
 
+  logout()
+  {
+    this.appService.logout();
+  }
 }

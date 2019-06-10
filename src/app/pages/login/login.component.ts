@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   login() {
     this.app.authenticate(this.credentials, () => {
       if (this.app.authenticated === true) {
-        alert('Success')
       } else {
         $('.error-message').fadeIn('slow');
         setTimeout( () => {

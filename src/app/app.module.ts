@@ -11,7 +11,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatFormFieldModule
+import { MatInputModule, MatFormFieldModule, MatButtonModule
 } from '@angular/material';
 
 @NgModule({
@@ -31,7 +31,8 @@ import { MatInputModule, MatFormFieldModule
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]

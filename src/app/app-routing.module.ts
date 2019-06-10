@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'login',
     pathMatch: 'full'
   }
+  ,{
+    path:'user-management',
+    loadChildren:()=> import('./pages/user-management/user-management.module').then(module=>module.UserManagementModule)
+  }
 ];
 
 @NgModule({
