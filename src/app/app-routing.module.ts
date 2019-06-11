@@ -7,11 +7,6 @@ const routes: Routes = [
     component: LoginComponent,
     path: '',
     pathMatch: 'full'
-  },
-  {
-    component: LoginComponent,
-    path: 'login',
-    pathMatch: 'full'
   }
   ,{
     path:'user-management',

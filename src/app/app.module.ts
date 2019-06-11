@@ -13,6 +13,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatFormFieldModule, MatButtonModule
 } from '@angular/material';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatInputModule, MatFormFieldModule, MatButtonModule
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxChartsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]

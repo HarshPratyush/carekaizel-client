@@ -27,6 +27,20 @@ export class UserManagementPageComponent implements OnInit {
   colorSets: any;
   view:number[]=[300,500]
   colorScheme;
+  customColors = [
+    { 
+      name: 'Active',
+      value: '#3d3c57'
+    },
+    { 
+      name: 'De-Activated',
+      value: '#525174'
+    }
+    , { 
+      name: 'New Registration',
+      value: '#a9a9ba'
+    }
+];
   constructor() {
     Object.assign(this, {
       colorSets

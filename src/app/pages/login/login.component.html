@@ -1,7 +1,7 @@
 
   <div class="container-fluid">
     <div class="col-md-12 row">
-      <div class="col-md-8 order-md-1 order-sm-2 order-xs-2" >
+      <div class="col-md-8" >
           <section>
 
                 <header class="text-center">
@@ -125,6 +125,11 @@
               </div>
             </div>
           </div>
+    </div>
+
+    <div class="col-md-4" *ngIf="app.checkLoggedIn()">
+            <ngx-charts-number-card  [results]="chartData"  [view]="view"  [customColors]="customColors" [animations]="true" [bandColor]="'#29293A'"> 
+            </ngx-charts-number-card>
     </div>
   </div>
 </div>
