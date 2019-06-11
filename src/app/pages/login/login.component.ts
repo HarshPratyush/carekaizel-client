@@ -21,15 +21,15 @@ export class LoginComponent implements OnInit {
   app: AppService;
   chartData:any[]=[
     {
-      "name": "Active",
-      "value": 40632
-    },
-    {
-      "name": "De-Activated",
+      "name": "Registred",
       "value": 49737
     },
     {
-      "name": "New Registration",
+      "name": "Assigned",
+      "value": 40632
+    },
+    {
+      "name": "Resolved",
       "value": 36745
     }
   ];
@@ -38,15 +38,15 @@ export class LoginComponent implements OnInit {
   colorScheme;
   customColors = [
     { 
-      name: 'Active',
+      name: 'Registred',
       value: '#3d3c57'
     },
     { 
-      name: 'De-Activated',
+      name: 'Assigned',
       value: '#525174'
     }
     , { 
-      name: 'New Registration',
+      name: 'Resolved',
       value: '#a9a9ba'
     }
 ]; 

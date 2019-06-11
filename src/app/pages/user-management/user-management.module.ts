@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UserManagementRoutingModule } from './user-management-routing.module';
 import { UserManagementPageComponent } from './user-management-page/user-management-page.component';
-import { MatTabsModule } from '@angular/material';
+import { MatTabsModule, MatButtonModule, MatTooltipModule } from '@angular/material';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @NgModule({
@@ -13,6 +13,8 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     UserManagementRoutingModule,
     MatTabsModule,
     NgxChartsModule,
+    MatButtonModule,
+    MatTooltipModule
   ]
 })
 export class UserManagementModule { }

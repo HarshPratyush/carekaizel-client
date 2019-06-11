@@ -12,9 +12,9 @@
         <a class="nav-link">Home </a>
       </li>
 
-      <li class="nav-item " routerLink="/" [ngClass]="router.url =='/contact-us'?'active':''">
+      <!-- <li class="nav-item " routerLink="/" [ngClass]="router.url =='/contact-us'?'active':''">
         <a class="nav-link">Contact Us </a>
-      </li>
+      </li> -->
 
       <li class="nav-item " routerLink="user-management" [ngClass]="router.url =='/user-management'?'active':''" *ngIf="appService.checkLoggedIn()">
           <a class="nav-link" >Manage Mechanics</a>

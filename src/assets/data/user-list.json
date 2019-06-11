@@ -1,0 +1,94 @@
+{
+    "users":[
+        {"status":"Active",
+            "userList":[{
+                "userId":1,
+                "firstName":"Harsh",
+                "miiddleName":"",
+                "lastName":"Pratyush",
+                "email":"harshPratyush@gmail.com",
+                "contact":"7684876516",
+                "action":[{"class":"fa fa-lock",
+                    "toolTip":"Lock"}]
+            },
+            {
+                "userId":2,
+                "firstName":"Rohit",
+                "miiddleName":"",
+                "lastName":"Patnaik",
+                "email":"harshPratyush@gmail.com",
+                "action":[{"class":"fa fa-lock",
+                    "toolTip":"Lock"}]
+            },
+            {
+                "userId":3,
+                "firstName":"Suman",
+                "miiddleName":"Sourav",
+                "lastName":"Das",
+                "email":"harshPratyush@gmail.com",
+                "action":[{"class":"fa fa-lock",
+                    "toolTip":"Lock"}]
+            }
+            ]},
+
+        {"status":"De-Activated",
+            "userList":[]},
+                
+
+     { "status":"New Registration",
+        "userList":[{
+            "userId":1,
+            "firstName":"Harsh",
+            "miiddleName":"",
+            "lastName":"Pratyush",
+            "email":"harshPratyush@gmail.com",
+            "action":[{"class":"fa fa-lock",
+                "toolTip":"Lock"}]
+        },
+        {
+            "userId":2,
+            "firstName":"Rohit",
+            "miiddleName":"",
+            "lastName":"Patnaik",
+            "email":"harshPratyush@gmail.com",
+            "action":[{"class":"fa fa-lock",
+                "toolTip":"Lock"}]
+        },
+        {
+            "userId":3,
+            "firstName":"Suman",
+            "miiddleName":"Sourav",
+            "lastName":"Das",
+            "email":"harshPratyush@gmail.com",
+            "action":[{"class":"fa fa-lock",
+                "toolTip":"Lock"}]
+        }
+        ]}]
+        ,
+        "chartData":[
+      {
+        "name": "Active",
+        "value": 40632
+      },
+      {
+        "name": "De-Activated",
+        "value": 49737
+      },
+      {
+        "name": "New Registration",
+        "value": 36745
+      }],
+      "customColors" : [
+        { 
+          "name": "Active",
+          "value": "#3d3c57"
+        },
+        { 
+          "name": "De-Activated",
+          "value": "#525174"
+        }
+        , { 
+          "name": "New Registration",
+          "value": "#a9a9ba"
+        }]
+}
