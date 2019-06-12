@@ -8,7 +8,7 @@
                 "lastName":"Pratyush",
                 "email":"harshPratyush@gmail.com",
                 "contact":"7684876516",
-                "action":[{"class":"fa fa-lock",
+                "action":[{"class":"fa fa-lock lock",
                     "toolTip":"Lock"}]
             },
             {
@@ -17,7 +17,7 @@
                 "miiddleName":"",
                 "lastName":"Patnaik",
                 "email":"harshPratyush@gmail.com",
-                "action":[{"class":"fa fa-lock",
+                "action":[{"class":"fa fa-lock lock",
                     "toolTip":"Lock"}]
             },
             {
@@ -26,7 +26,7 @@
                 "miiddleName":"Sourav",
                 "lastName":"Das",
                 "email":"harshPratyush@gmail.com",
-                "action":[{"class":"fa fa-lock",
+                "action":[{"class":"fa fa-lock lock",
                     "toolTip":"Lock"}]
             }
             ]},
@@ -42,8 +42,8 @@
             "miiddleName":"",
             "lastName":"Pratyush",
             "email":"harshPratyush@gmail.com",
-            "action":[{"class":"fa fa-lock",
-                "toolTip":"Lock"}]
+            "action":[{"class":"fa fa-check approve",
+                "toolTip":"Approve"}]
         },
         {
             "userId":2,
@@ -51,8 +51,8 @@
             "miiddleName":"",
             "lastName":"Patnaik",
             "email":"harshPratyush@gmail.com",
-            "action":[{"class":"fa fa-lock",
-                "toolTip":"Lock"}]
+            "action":[{"class":"fa fa-check approve",
+                "toolTip":"Approve"}]
         },
         {
             "userId":3,
@@ -60,8 +60,8 @@
             "miiddleName":"Sourav",
             "lastName":"Das",
             "email":"harshPratyush@gmail.com",
-            "action":[{"class":"fa fa-lock",
-                "toolTip":"Lock"}]
+            "action":[{"class":"fa fa-check approve",
+                "toolTip":"Approve"}]
         }
         ]}]
         ,

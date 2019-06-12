@@ -26,7 +26,8 @@
       <td>{{users.lastName}}</td>
       <td>{{users.email}}</td>
       <td>{{users.contact}}</td>
-      <td><button  *ngFor="let action of users.action" [matTooltip]="action.toolTip"><i class="{{action.class}}" ></i></button></td>
+      <td><button mat-button mat-raised-button *ngFor="let action of users.action" [matTooltip]="action.toolTip"
+        (click)="openDailog(action,users)"><i class="{{action.class}}" ></i></button></td>
      
     </tr>
 

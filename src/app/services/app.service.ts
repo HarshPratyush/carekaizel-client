@@ -44,7 +44,6 @@ export class AppService {
         this.validationMsg = 'Given username has been disabled. Please contact your admin';
       else if (error == 'Invalid Credentials !' || error == 'Bad credentials')
         this.validationMsg = 'Wrong username/password entered';
-
         else
         this.validationMsg="Couldn't Connect to Server"
       setTimeout(() => {

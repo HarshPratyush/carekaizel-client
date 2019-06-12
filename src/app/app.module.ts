@@ -20,7 +20,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
