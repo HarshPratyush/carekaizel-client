@@ -20,6 +20,10 @@
           <a class="nav-link" >Manage Mechanics</a>
         </li>
 
+        <li class="nav-item " routerLink="complaint-managment" [ngClass]="router.url =='/complaint-managment'?'active':''" *ngIf="appService.checkLoggedIn()">
+          <a class="nav-link" >Manage Complaints</a>
+        </li>
+
 
       <li class="nav-item " *ngIf="appService.checkLoggedIn()">
         <a class="nav-link" (click)="logout()">Logout</a>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ConfirmationDailogComponent } from '../dailogs/confirmation-dailog/confirmation-dailog.component';
+import { ToastrService } from 'ngx-toastr';
+import { Constants } from 'src/app/models/constants';
 
 @Component({
   selector: 'kaizel-user-management-page',
@@ -17,11 +19,16 @@ export class UserManagementPageComponent implements OnInit {
   customColors = [];
 
 
-  constructor(private userService:UserService,public dialog: MatDialog) {
+  constructor(private userService:UserService,public dialog: MatDialog,private toatsr:ToastrService) {
   }
 
   ngOnInit() {
 
+    this.getUserList();
+  }
+
+  getUserList()
+  {
     this.userService.getMechanicDetails().subscribe(data=>{
       this.userList=data.users;
       this.chartData=data.chartData;
@@ -41,11 +48,22 @@ export class UserManagementPageComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
         if(result)
         {
-        console.log(result)
+       this.userService.approveUser(userData.id).subscribe(d=>{
+         if(d.statusCode==200)
+         {
+           this.toatsr.success(d.message);
+           this.getUserList();
+         }
+         else{
+           this.toatsr.error(d.message);
+         }
+       },error=>{
+         this.toatsr.error(Constants.ERROR_MESSAGE)
+       })
         }
       });
     }
-    else if(action.class.includes('lock'))
+    else if(action.class.includes('fa-lock'))
     {
       const dialogRef = this.dialog.open(ConfirmationDailogComponent, {
         width: '400px',
@@ -55,11 +73,22 @@ export class UserManagementPageComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
         if(result)
         {
-        console.log(result)
+          this.userService.disableUser(userData.id).subscribe(d=>{
+            if(d.statusCode==200)
+            {
+              this.toatsr.success(d.message);
+              this.getUserList();
+            }
+            else{
+              this.toatsr.error(d.message);
+            }
+          },error=>{
+            this.toatsr.error(Constants.ERROR_MESSAGE)
+          })
         }
       });
     }
-    else if(action.class.includes('unlock'))
+    else if(action.class.includes('fa-unlock'))
     {
       const dialogRef = this.dialog.open(ConfirmationDailogComponent, {
         width: '400px',
@@ -69,7 +98,18 @@ export class UserManagementPageComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
         if(result)
         {
-        console.log(result)
+          this.userService.enableUser(userData.id).subscribe(d=>{
+            if(d.statusCode==200)
+            {
+              this.toatsr.success(d.message);
+              this.getUserList();
+            }
+            else{
+              this.toatsr.error(d.message);
+            }
+          },error=>{
+            this.toatsr.error(Constants.ERROR_MESSAGE)
+          })
         }
       });
     }

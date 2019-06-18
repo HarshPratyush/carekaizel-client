@@ -10,7 +10,7 @@ declare var $:any;
 export class AppComponent implements OnInit {
 
   ngOnInit(): void {
-   $('.main-class').css("min-height",$(window).height()-50);
+   $('.main-class').css("min-height",$(window).height()-75);
   }
 
 }

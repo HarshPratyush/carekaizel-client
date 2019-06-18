@@ -11,6 +11,9 @@ const routes: Routes = [
   ,{
     path:'user-management',
     loadChildren:()=> import('./pages/user-management/user-management.module').then(module=>module.UserManagementModule)
+  },{
+    path:'complaint-managment',
+    loadChildren:()=> import('./pages/complaint-management/complaint-management.module').then(module=>module.ComplaintManagementModule)
   }
 ];
 

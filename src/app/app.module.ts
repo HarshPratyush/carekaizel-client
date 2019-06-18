@@ -27,7 +27,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastrModule.forRoot({positionClass: 'toast-top-full-width'}),
+    ToastrModule.forRoot(),
     LoadingBarHttpClientModule,
     FormsModule,
     MatFormFieldModule,
