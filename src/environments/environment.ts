@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url:'http://care.kaizelengineers.com/carekaizel-bkend/'
+  api_url:'http://localhost:8080/care-kaizel/'
 };
 
 /*

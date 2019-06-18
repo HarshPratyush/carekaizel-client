@@ -8,5 +8,5 @@ export class Constants {
   public static get API_GATE_WAY(): string {return environment.api_url; }
   public static get LOGIN_URL(): string {return 'oauth/token'};
   public static get USER_DATA(): string {return 'user'};
-  public static get MECHANIC_DETAILS():string {return '/assets/data/user-list.json'}
+  public static get MECHANIC_DETAILS():string {return Constants.API_GATE_WAY+'getAllUsers'}
 }
