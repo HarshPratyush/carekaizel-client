@@ -1,9 +1,15 @@
 <div class="container-fluid">
-  <div class="col-md-12">
-  <ngx-charts-number-card  [results]="chartData"  [view]="view"  [customColors]="customColors" [animations]="true" [bandColor]="'#29293A'"> 
-  </ngx-charts-number-card>
-  </div>
+  
   <div class="col-md-12 text-center">
+
+    <div class="row">
+        <div class="col-md-3">
+            <ngx-charts-number-card  [results]="chartData"  [view]="view"  [customColors]="customColors" [animations]="true" [bandColor]="'#29293A'"> 
+            </ngx-charts-number-card>
+            </div>
+
+
+     <div class="col-md-9">
     <mat-tab-group>
         <mat-tab *ngFor="let type of userList" [label]="type.status">
           <table class="table table-bordered">
@@ -39,6 +45,8 @@
         </mat-tab>
   
       </mat-tab-group>
+      </div>
+    </div>
     </div>
 
 </div>

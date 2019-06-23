@@ -14,4 +14,7 @@ export class Constants {
   public static get DISABLE_USER():string{return Constants.API_GATE_WAY+'disableMechanic'}
   public static get ACTIVATE_USER():string{return Constants.API_GATE_WAY+'activateMechanic'}
   public static get ERROR_MESSAGE():string{return 'Cannot Connect to server'}
+  public static get ALL_SUBMISSION():string{return Constants.API_GATE_WAY+'getAllSubmissions'}
+  public static get VIEW_SUBMISSION():string{return Constants.API_GATE_WAY+'viewSubmission'}
+  public static get ALL_MECHANICS():string{return Constants.API_GATE_WAY+'getAllMechanics'}
 }
