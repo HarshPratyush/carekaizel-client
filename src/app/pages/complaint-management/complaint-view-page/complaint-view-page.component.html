@@ -65,19 +65,22 @@
                     </div>
 
 
-                  <div class="col-md-6" *ngIf="!submissionData?.mechanicName">
-                      <mat-form-field appearance="outline">
+                  <div class="col-md-12" *ngIf="!submissionData?.mechanicName">
+                      <mat-form-field appearance="outline" >
                           <mat-label>Select Mechanic</mat-label>
                           <mat-select  [(ngModel)]="selectedMechanic">
                             <mat-option *ngFor="let mechanic of mechanicList" [value]="mechanic">{{mechanic.mechanicName}}</mat-option>
                           </mat-select>
                           <mat-icon matSuffix>person_pin</mat-icon>
+                          <mat-error>
+                            Please Select one mechanic
+                            </mat-error>
                         </mat-form-field>
                     </div>
 
 
-                    <div class="col-md-6 text-center" *ngIf="!submissionData?.mechanicName">
-                      <button class="mat-button button-submit">Assign Mechanic </button>
+                    <div class="col-md-6 offset-md-3 text-center" *ngIf="!submissionData?.mechanicName">
+                      <button class="mat-button button-submit" (click)="assignMechanic()">Assign Mechanic </button>
                       </div>
 
                   <div class="col-md-6" *ngIf="submissionData?.mechanicName">

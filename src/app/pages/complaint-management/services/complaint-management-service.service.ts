@@ -23,4 +23,8 @@ export class ComplaintManagementServiceService {
   getAllMechanics():Observable<any>{
     return this.httpClient.get(Constants.ALL_MECHANICS);
   }
+
+  assignToMechanic(mechanicId,complainId):Observable<any>{
+    return this.httpClient.post(Constants.ASSIGN_TO_MECHANIC+'?mechanicId='+mechanicId+'&complainId='+this.complaintId,null)
+  }
 }

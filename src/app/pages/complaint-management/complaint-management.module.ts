@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ComplaintManagementRoutingModule } from './complaint-management-routing.module';
 import { ComplaintManagementPageComponent } from './complaint-management-page/complaint-management-page.component';
-import { MatTooltipModule, MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatCardModule, MatSelectModule, MatButtonModule } from '@angular/material';
+import { MatTooltipModule, MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatCardModule, MatSelectModule, MatButtonModule, MatSnackBarModule } from '@angular/material';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ComplaintViewPageComponent } from './complaint-view-page/complaint-view-page.component';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     MatCardModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ]
 })
 export class ComplaintManagementModule { }

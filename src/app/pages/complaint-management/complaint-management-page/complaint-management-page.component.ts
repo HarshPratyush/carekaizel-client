@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class ComplaintManagementPageComponent implements OnInit {
 
   complaintStatusModel:any;
-  view: number[] = [300, 500]
+  view: number[] = [300, 700]
  constructor(private complaintService:ComplaintManagementServiceService,private toastr:ToastrService,private router:Router){
 
  }
