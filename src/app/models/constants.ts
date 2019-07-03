@@ -1,6 +1,7 @@
 import { environment } from 'src/environments/environment';
 
 export class Constants {
+  public static get ALL_SUBMISSIONS_LOGIN(): string{return Constants.API_GATE_WAY+'getAllSubmissionsLogin'};
   public static get SELECT_MECHANIC_ERROR_MESSAGE():string{return "Please Select a mechanic to assign"}
   public static get ACCESS_TOKEN(): string{return 'kaizel_access_token';}
   public static get REFRESH_TOKEN(): string{return 'kaizel_refresh_token';}

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Constants } from '../models/constants';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
 
@@ -145,5 +145,9 @@ export class AppService {
     } else {
       return {}
     }
+  }
+
+  public getAllSubmissionsLogin():Observable<any>{
+    return this.http.get(Constants.ALL_SUBMISSIONS_LOGIN)
   }
 }
