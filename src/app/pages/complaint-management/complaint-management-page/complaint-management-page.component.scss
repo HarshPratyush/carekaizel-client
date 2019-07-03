@@ -1,0 +1,26 @@
+.excel-submit {
+    width: 100%;
+    margin:6px 0 6px;
+    padding: 0rem 0rem;   
+    background-color: #525174;
+    border-radius: 0rem;
+    color: #FFF;
+  }
+
+  ::ng-deep .mat-tab-label-active{
+    background-color: #525174;
+    color: white;
+    opacity: 0.8 !important;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #1E1E2B;
+}
+
+td button{
+    margin: 2px;
+}
+
+.no-data{
+    font-size: 24px;
+}

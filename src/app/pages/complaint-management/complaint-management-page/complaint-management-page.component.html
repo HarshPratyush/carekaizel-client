@@ -10,6 +10,26 @@
             <div class="col-md-9">
     <mat-tab-group>
         <mat-tab *ngFor="let type of complaintStatusModel.submissionModels" [label]="type.status">
+         
+          <div class="pull-right col-md-3">
+          <button type="button" mat-button  mat-flat-button class="excel-submit" (click)="excelexport.save()"> <i class="fa fa-file-excel-o" aria-hidden="true"></i> Export To Excel</button>
+            </div>
+        <kendo-excelexport [data]="type.listModels"  [collapsible]="false" [creator]="'kaizel'" [fileName]="getFileName(type.status)" #excelexport>
+            <kendo-excelexport-column field="customerName" [headerCellOptions]="cellOption" [locked]="false" title="Customer Name" [width]="350">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="registrationDate"  [headerCellOptions]="cellOption" [locked]="false"title="Registration Date" [width]="350">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="breakDownFrom" [headerCellOptions]="cellOption" [locked]="false" title="Break Down From" width="350">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="mechanicName" [headerCellOptions]="cellOption" [locked]="false" title="Mechanic Name" width="350">
+            </kendo-excelexport-column>
+            <kendo-excelexport-column field="resolvedDate" [headerCellOptions]="cellOption" [locked]="false" title="Resolve Date" width="350">
+            </kendo-excelexport-column>
+
+
+      </kendo-excelexport>
+
+
           <table class="table table-bordered ">
   <thead class="thead-dark">
     <tr>

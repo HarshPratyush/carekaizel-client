@@ -6,6 +6,7 @@ import { UserManagementPageComponent } from './user-management-page/user-managem
 import { MatTabsModule, MatButtonModule, MatTooltipModule, MatDialogModule } from '@angular/material';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
 import { ConfirmationDailogComponent } from './dailogs/confirmation-dailog/confirmation-dailog.component';
+import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
 
 @NgModule({
   declarations: [UserManagementPageComponent, ConfirmationDailogComponent],
@@ -16,7 +17,8 @@ import { ConfirmationDailogComponent } from './dailogs/confirmation-dailog/confi
     NgxChartsModule,
     MatButtonModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    ExcelExportModule
   ],
   entryComponents:[ConfirmationDailogComponent]
 })

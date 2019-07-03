@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatFormFieldModule, MatButtonModule
 } from '@angular/material';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    NgxChartsModule
+    NgxChartsModule,
+    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { ConfirmationDailogComponent } from '../dailogs/confirmation-dailog/confirmation-dailog.component';
 import { ToastrService } from 'ngx-toastr';
 import { Constants } from 'src/app/models/constants';
+import { CellOptions } from '@progress/kendo-angular-excel-export';
 
 @Component({
   selector: 'kaizel-user-management-page',
@@ -17,6 +18,13 @@ export class UserManagementPageComponent implements OnInit {
   colorSets: any;
   view: number[] = [300, 500]
   customColors = [];
+  cellOption:CellOptions={
+    background:'#525174',
+    bold:true,
+    wrap:true,
+    fontSize:14,
+    color:'#ffff'
+  }
 
 
   constructor(private userService:UserService,public dialog: MatDialog,private toatsr:ToastrService) {
@@ -113,6 +121,10 @@ export class UserManagementPageComponent implements OnInit {
         }
       });
     }
+  }
+
+  getFileName(type:string){
+    return 'Users'+type+'_'+new Date()+'.xlsx';
   }
 
 }

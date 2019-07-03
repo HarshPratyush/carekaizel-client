@@ -7,6 +7,7 @@ import { MatTooltipModule, MatTabsModule, MatInputModule, MatFormFieldModule, Ma
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ComplaintViewPageComponent } from './complaint-view-page/complaint-view-page.component';
 import { FormsModule } from '@angular/forms';
+import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
 
 @NgModule({
   declarations: [ComplaintManagementPageComponent, ComplaintViewPageComponent],
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatSelectModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ExcelExportModule
   ]
 })
 export class ComplaintManagementModule { }
