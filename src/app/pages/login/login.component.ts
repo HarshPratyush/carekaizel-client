@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
   confirmPassword: any;
   form: FormGroup;
   app: AppService;
-  chartData:any[]=[];
   view:number[]=[400,500]
-  customColors = []; 
   constructor( private appService: AppService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
@@ -35,18 +33,13 @@ export class LoginComponent implements OnInit {
   }
 
   getAllSubmissionsLogin(){
-    this.appService.getAllSubmissionsLogin().subscribe(d=>{
-      this.chartData=d.chartData;
-      this.customColors=d.customColors;
-    },error=>{
-      this.toastr.error(Constants.ERROR_MESSAGE)
-    })
+    this.appService.getAllSubmissionsLogin()
   }
 
   login() {
     this.app.authenticate(this.credentials, () => {
-      if (this.app.authenticated === true) {
-        this.getAllSubmissionsLogin()
+      if (this.app.checkLoggedIn()) {
+
       } else {
         $('.error-message').fadeIn('slow');
         setTimeout( () => {
@@ -54,6 +47,7 @@ export class LoginComponent implements OnInit {
         }, 5000);
       }
     });
+
     return false;
   }
 }

@@ -4,6 +4,7 @@ import { Constants } from '../models/constants';
 import { throwError, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpHeaders, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,16 @@ export class AppService {
   isValid: boolean = true;
   _data: any;
   validationMsg: any;
-  constructor(private http: HttpClient, private router: Router) { }
+  chartData:any[]=[];
+  view:number[]=[400,500]
+  customColors = []; 
+  constructor(private http: HttpClient, private router: Router,private toastr:ToastrService) { }
 
   authenticate(credentials, callback) {
 
     this.isValid = false;
     this.deleteCookies();
-    this.callServer(credentials).subscribe(response => {
+     this.callServer(credentials).subscribe(response => {
       this._data = response;   //store the token
       localStorage.setItem(Constants.ACCESS_TOKEN, this._data.access_token);
       localStorage.setItem(Constants.REFRESH_TOKEN, this._data.refresh_token);
@@ -33,12 +37,28 @@ export class AppService {
         })
       };
 
+      this.getAllSubmissionsLoginAsObserVable().subscribe(d=>{
+        
+        let data:any =d;
+        this.chartData=data.chartData;
+        this.customColors=data.customColors;
+      
       this.http.get(Constants.API_GATE_WAY + Constants.USER_DATA, httpOptions).subscribe(user => {
 
         localStorage.setItem(Constants.USER_DETAILS, JSON.stringify(user));
         this.router.navigateByUrl((user as any).sessionMap.landing);
         this.isValid = true;
       });
+    },error=>{
+     this.validationMsg=error.error.error_description;
+    setTimeout(() => {
+      this.validationMsg = '';
+    }, 3000)
+
+      this.deleteCookies();
+    })
+
+     
     }, error => {
       if (error == 'User is disabled')
         this.validationMsg = 'Given username has been disabled. Please contact your admin';
@@ -147,7 +167,17 @@ export class AppService {
     }
   }
 
-  public getAllSubmissionsLogin():Observable<any>{
-    return this.http.get(Constants.ALL_SUBMISSIONS_LOGIN)
+  public getAllSubmissionsLogin(){
+    return this.http.get(Constants.ALL_SUBMISSIONS_LOGIN).subscribe(d=>{
+      let data:any =d;
+      this.chartData=data.chartData;
+      this.customColors=data.customColors;
+    },error=>{
+      this.toastr.error(Constants.ERROR_MESSAGE)
+    })
+  }
+
+  public getAllSubmissionsLoginAsObserVable(){
+    return this.http.get(Constants.ALL_SUBMISSIONS_LOGIN);
   }
 }

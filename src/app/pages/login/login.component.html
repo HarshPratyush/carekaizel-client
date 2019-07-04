@@ -128,7 +128,7 @@
     </div>
 
     <div class="col-md-4" *ngIf="app.checkLoggedIn()">
-            <ngx-charts-number-card  [results]="chartData"  [view]="view"  [customColors]="customColors" [animations]="true" [bandColor]="'#29293A'"> 
+            <ngx-charts-number-card  [results]="app.chartData"  [view]="view"  [customColors]="app.customColors" [animations]="true" [bandColor]="'#29293A'"> 
             </ngx-charts-number-card>
     </div>
   </div>

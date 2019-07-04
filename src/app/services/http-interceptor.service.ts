@@ -33,8 +33,8 @@ export class HttpInterceptorService implements HttpInterceptor {
       .pipe(catchError(error => {
         if (error instanceof HttpErrorResponse) {
           switch ((<HttpErrorResponse>error).status) {
-            // case 400:
-            //   return this.handle400Error(error);
+            case 400:
+              return this.handle400AND403Error(error);
             case 401:
               return this.handle401Error(req, next);
           }
@@ -86,8 +86,13 @@ export class HttpInterceptorService implements HttpInterceptor {
     }
   }
 
-  handle400Error(error) {
+  handle400AND403Error(error) {
     if (error && error.status === 400 && error.error && error.error.error === 'invalid_grant') {
+      // If we get a 400 and the error message is 'invalid_grant', the token is no longer valid so logout.
+      this.deleteCookies();
+
+    }
+    else  if (error && error.status === 403) {
       // If we get a 400 and the error message is 'invalid_grant', the token is no longer valid so logout.
       this.deleteCookies();
 
